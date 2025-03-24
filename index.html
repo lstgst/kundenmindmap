@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>MindMapRebel – Kunden-Zielgruppen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6600;
+            --background: #0e0e0e;
+            --text: #ffffff;
+            --card-bg: #1a1a1a;
+            --card-padding: 2rem;
+            --gap: 2.5rem;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .header-logo {
+            max-width: 400px;
+            width: 100%;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 3rem 0 4rem;
+            font-size: 3rem;
+        }
+
+        .mindmap-grid {
+            display: grid;
+            grid-template-areas:
+                ". center ."
+                "left center right"
+                ". bottom .";
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-gap: var(--gap);
+            align-items: center;
+            justify-items: center;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+
+        .card {
+            border-radius: 16px;
+            padding: var(--card-padding);
+            background-color: var(--card-bg);
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+            border: 2px solid var(--primary-color);
+            width: 100%;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.6);
+        }
+
+        .center-card { grid-area: center; }
+        .left-card { grid-area: left; }
+        .right-card { grid-area: right; }
+        .bottom-card { grid-area: bottom; }
+
+        .card h2 {
+            margin: 0 0 1rem;
+            color: var(--text);
+            font-size: 1.75rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card li {
+            margin: 0.75rem 0;
+            font-size: 1.2rem;
+        }
+
+        svg.connector {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        svg path {
+            stroke: var(--primary-color);
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-dasharray: 20;
+            stroke-dashoffset: 0;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        svg:hover path {
+            stroke-dashoffset: 0;
+        }
+
+        @media (max-width: 768px) {
+            .mindmap-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            svg.connector {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="df2.png" alt="Kunden Zielgruppen Logo" class="header-logo">
+    </header>
+
+    <div class="mindmap-grid">
+        <div class="card center-card">
+            <h1>Kunden-Zielgruppen</h1>
+            <p>Die Kunden-Zielgruppen sind die wichtigsten Personen und Gruppen, die von den IT-Dienstleistungen betroffen sind. Sie haben spezifische Anforderungen und Erwartungen an die IT-Abteilung und die IT-Systeme.</p>
+        </div>
+
+        <div class="card left-card"> 
+            <h2>Interne Kunden</h2>
+            <ul>
+                <li><strong>IT-Abteilung:</strong> Stabile und performante Systeme, schnelle Problemlösung durch Support-Tickets, regelmäßige Sicherheits- und Funktionsupdates, Ressourcenoptimierung</li>
+                <li><strong>Management:</strong> Effizienzsteigerung durch IT-Lösungen, strategische IT-Planung, Datensicherheit, Entscheidungsgrundlagen durch aussagekräftige Reports</li>
+                <li><strong>Angestellte:</strong> Intuitive Anwendungen, geringe Einarbeitungszeit, Zuverlässigkeit, reibungsloser Arbeitsablauf</li>
+                <li><strong>Mitarbeiter:</strong> Benutzerfreundliche Oberflächen, persönlicher Support, schnelle Hilfe bei technischen Problemen, Schulungen für neue Tools</li>
+            </ul>
+        </div>
+        
+        <div class="card right-card">
+            <h2>Externe Kunden</h2>
+            <ul>
+                <li><strong>Endnutzer:</strong> Intuitive Benutzerführung, kurze Ladezeiten, Datensicherheit und Privatsphäre, mobile Optimierung</li>
+                <li><strong>Geschäftskunden:</strong> Individuelle Anpassungsmöglichkeiten, skalierbare Lösungen, zuverlässiger Support, einfache Integration in bestehende Systeme</li>
+                <li><strong>Partner:</strong> Transparente Kommunikation, effektive Zusammenarbeit bei Projekten, gemeinsame Schnittstellen, abgestimmte Prozesse</li>
+            </ul>
+        </div>
+        
+        <div class="card bottom-card">
+            <h2>Erwartungen</h2>
+            <ul>
+                <li><strong>Qualität:</strong> Hohe Systemverfügbarkeit, minimierte Ausfallzeiten, planbare Wartungsfenster, verlässliche Performance</li>
+                <li><strong>Sicherheit:</strong> Schutz vor Cyberangriffen, Einhaltung gesetzlicher Vorgaben (z. B. DSGVO), regelmäßige Sicherheitsüberprüfungen, Zugriffskontrollen</li>
+                <li><strong>Innovation:</strong> Einsatz neuer Technologien, kontinuierliche Weiterentwicklung der IT-Landschaft, Flexibilität bei Veränderungen, frühzeitige Trend-Erkennung</li>
+            </ul>
+        </div>
+
+        <svg class="connector">
+            <path d="M 20% 45% Q 50% 30%, 80% 45%" />
+            <path d="M 50% 50% Q 50% 65%, 50% 80%" />
+        </svg>
+    </div>
+</body>
+</html>
